@@ -113,6 +113,34 @@ for question in questions:
 
 print("\n✅ Test complete!")
 ```
+## 📊 RLHF Training Analysis
+
+### Now let's analyze the RLHF training with a **Pretrained Reward Model**
+
+This section summarizes key observations from PPO training using a pretrained reward model from Hugging Face:
+
+- **Cumulative Reward:**  
+  Grows continuously and peaks at step 60. It stabilizes between steps 60–85, then drops.
+
+- **Step Rewards:**  
+  Start off positive but fluctuate frequently. After each negative reward, the model seeks actions that yield positive rewards. Between steps 75–85, rewards hover near zero, then drop sharply.
+
+- **Policy Loss:**  
+  Increases when rewards drop, showing the model struggles to learn when feedback is unclear. When rewards are zero, the loss highlights the agent’s difficulty in finding guidance.
+
+- **Entropy:**  
+  Rises when the model is unsure and explores more actions, indicating active exploration in challenging situations.
+
+- **KL Divergence:**  
+  Remains normal and controlled, showing that PPO keeps policy updates stable.
+
+**Key Insights:**  
+- This pretrained model enables the longest training run with interesting stable periods not observed in other approaches.
+- After step 60, entropy increases when rewards decline, unlike the previous model, which became overconfident.
+- Loss increases indicate the model is still learning, but rewards plateau, showing limited new guidance.
+- All reward models face similar challenges; careful hyperparameter tuning and close monitoring are essential for optimal performance.
+
+![Training Analysis](https://github.com/hydarim7/SmolLM2_RLHF_PPO_HY/blob/main/OUTPUT1.png)
 
 
 
