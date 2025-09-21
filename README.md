@@ -38,6 +38,12 @@ The reward model evaluates whether the new response is better while ensuring it 
 - Accepted Response  
 
 ---
+# 🚀 Use Cases
+- Human-aligned **text generation**  
+- **RLHF & PPO** research experiments  
+- Educational resource for reinforcement learning on LLMs  
+
+---
 
 # 🎯 Training Objective
 - Encourage alignment with **accepted answers**  
@@ -77,12 +83,7 @@ This section summarizes key observations from PPO training using a pretrained re
 
 ---
 
-# 🚀 Use Cases
-- Human-aligned **text generation**  
-- **RLHF & PPO** research experiments  
-- Educational resource for reinforcement learning on LLMs  
 
----
 ### 🔧 Key Hyperparameters
 - **Learning Rate:** `2e-6`  
 - **PPO Epochs:** `4`  
